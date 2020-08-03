@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<base href="<?php echo e(asset('')); ?>">
+<title>Laravel 5.8 Ajax Example</title>
+<link rel="shortcut icon" href="<?php echo e(asset('images/favicon.png')); ?>" type="image/x-icon"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+
+    <link href="admin_aset/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="admin_aset/bower_components/bootstrap/dist/css/icon.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="admin_aset/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="admin_aset/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- DataTables CSS -->
+    <link href="admin_aset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="admin_aset/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="admin_aset/dist/fontawesome/css/all.css">
+    <link rel="stylesheet" href="admin_aset/dist/css/css.css">
+    <link rel="stylesheet" href="admin_aset/dist/css/animate.css">
+    <link rel="stylesheet" href="admin_aset/dist/css/boostrap.css">
+    <link rel="stylesheet" href="admin_aset/dist/css/buttons.css">
+    <link rel="stylesheet" href="admin_aset/dist/css/colorbox.css">
+    <link rel="stylesheet" href="admin_aset/dist/css/font-awesome.min.css">
+    <link rel="stylesheet" href="admin_aset/dist/css/font.css">
+    <link rel="stylesheet" href="admin_aset/dist/css/icon.css">
+    <link rel="stylesheet" href="admin_aset/dist/css/lleader.css">
+    <link rel="stylesheet" href="admin_aset/dist/css/Ncolorbax.css">
+    <link rel="stylesheet" href="admin_aset/dist/css/orange.css">
+    <link rel="stylesheet" href="admin_aset/dist/css/ori-core.css">
+    <link rel="stylesheet" href="admin_aset/dist/css/responsive.css">
+    <link rel="stylesheet" href="admin_aset/dist/css/style.css">
+    <link rel="stylesheet" href="admin_aset/dist/css/style_table.css">
+    <link rel="stylesheet" href="admin_aset/dist/css/ui-custom.css">
+    <link rel="stylesheet" href="admin_aset/dist/css/jquery.alerts.css">
+     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>
+ 
+
+</head>
+<body>
+     <div class="container-fuild">
+        
+        <section class="vbox">
+        
+<?php echo $__env->make('admin.layout.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+
+
+  
+  
+<section class="section-layout-1">
+     <section class="hbox stretch">
+                <!-- .aside -->
+                <?php echo $__env->make('admin.layout.menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>        
+     <section id="content">
+                    <section class="hbox stretch">
+
+                        <section class="section-layout-2">
+                            
+
+<style>
+ .bg-success-aler {
+       background-color: #FF0000;
+color: #FFFFFF;
+font-weight: bold;
+padding: 5px;
+border-radius: 3px;
+margin-right: 2px;
+    }
+</style>
+<section class="vbox">
+    
+<header class="header bg-light dk">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="menu-option-top1 panel b-a m-b-sm">
+                <div class="row m-n">
+                    <div class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-warning hover-rotate"></i>
+                                <i class="i i-plus2 text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-danger">Thêm mới</span>
+                                <small class="text-muted">Học Viên</small>
+                            </span>
+                        </a>
+                    </div>
+                    <div id="menutop_search" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-success-lt hover-rotate"></i>
+                                <i class="fa fa-list text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-success">Danh sách</span>
+                                <small class="text-muted">Học viên</small>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div id="menutop_tiemnang" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-success-dker hover-rotate"></i>
+                                <i class="fa fa-star text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-success">Học viên</span>
+                                <small class="text-muted">Tiềm năng</small>
+                            </span>
+                        </a>
+                    </div>
+                   
+                    <div id="menutop_History-registry" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-primary hover-rotate"></i>
+                                <i class="i i-history icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-primary">Lịch sử</span>
+                                <small class="text-muted">Đăng Ký</small>
+                            </span>
+                        </a>
+                    </div>
+                    <div id="menutop_thongke" class="item-menu col-md-2 m-t-xs m-b-xs">
+                        <a href="" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                                <i class="i i-stats icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-primary">Thống kê</span>
+                                <small class="text-muted">Học viên</small>
+                            </span>
+                        </a>
+                    </div>
+
+                     <div id="menutop_thongke_dauvao" class="item-menu col-md-2 m-t-xs m-b-xs">
+                        <a href="" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                                <i class="i i-stats icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-primary">TK Bài test</span>
+                                <small class="text-muted">Test đầu vào</small>
+                            </span>
+                        </a>
+                    </div>
+                      <div id="menutop_danhsach_nghihoc" class="item-menu col-md-2 m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=hocvien!danhsach_nghihoc" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                                <i class="i i-stats icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-primary">Nghỉ học</span>
+                                <small class="text-muted">Học viên Vắng</small>
+                            </span>
+                        </a>
+                    </div>
+                    <div id="menutop_Danhsach_14days" class="item-menu col-md-2 m-t-xs m-b-xs ">
+                        <a href="" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                                <i class="i i-stats icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-primary">Gần Kết Khóa</span>
+                                <small class="text-muted">14 Ngày</small>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<span id="ctl10_menutop_script_menutop"> <script>document.getElementById("menutop_tiemnang").classList.add('item-active');</script></span>
+   <section class="scrollable wrapper">
+        <div class="row">
+            <div id="alertMessage" class="error"></div>
+            <div class="col-sm-12">
+                <form id="formlenh_group" class="form-horizontal" data-validate="parsley">
+                    <input name="ctl10$idlenh" type="hidden" id="idlenh" />
+                    <input name="ctl10$idhocvien" type="hidden" id="idhocvien" value="3830" />
+
+                    <section class="panel panel-default">
+                        <header class="panel-heading">
+                            <p class="inline m-b-xs m-t-xs font-bold">
+                                PHIẾU ĐĂNG KÝ KHÓA HỌC
+                            </p>
+                            <div id="toolbar" class="pull-right">
+                                <span id="bt_menulist">
+                                    <button data-toggle="dropdown" class="dropdown-toggle btn btn-sm btn-default" type="button"><i class="i i-ellipsis"></i></button>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href=""><i class="fa fa-print"></i>In phiếu đăng ký</a></li>
+                                        <li><a href="javascript:Thu_hocphi()"><i class="fa fa-dollar"></i>Thu học phí</a></li>
+                                        
+                                        
+                                        
+                                        <li><a href=""><i class="fa fa-times"></i>Xóa phiếu đăng ký</a></li>
+                                    </ul>
+                                </span>
+                            </div>
+
+                            <div class="clearfix"></div>
+
+
+
+                        </header>
+                        <div class="row wrapper">
+                            <div class="col-sm-12">
+
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Mã Đăng ký</label>
+                                        <div id="ctl10_madk" class="col-sm-3">
+                                        </div>
+                                        <label class="col-sm-2 control-label">Ngày </label>
+                                        <div id="ctl10_ngay" class="col-sm-3">
+                                        </div>
+                                    </div>
+                                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Họ tên học viên</label>
+                                        <div id="ctl10_hoten" class="col-sm-3">D</div>
+                                        <label class="col-sm-2 control-label">Mã HV</label>
+                                        <div id="ctl10_mahv" class="col-sm-3">TH TG 01 -3830</div>
+                                    </div>
+                                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Ghi chú</label>
+                                        <div class="col-sm-9">
+                                            <input name="ctl10$ghichu_phieu" type="text" id="ghichu_phieu" class="form-control parsley-validated"  disabled="disabled" />
+                                        </div>
+                                    </div>
+                                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                                    
+                                </div>
+
+                            </div>
+                        </div> 
+
+                        <div id="grid_view_dangky" class="table-responsive listing">
+                            <table class="table table-striped b-t b-light">
+                                <thead>
+                                    <tr class="bg-info-ltest">
+                                        <th style="width: 50px">STT
+                                        </th>
+                                        <th>TÊN</th>
+                                        <th>SỐ LƯỢNG</th>
+                                        <th>ĐƠN GIÁ</th>
+                                        <th>CK</th>
+                                        <th>THÀNH TIỀN</th>
+                                        <th>Action</th>
+                                    </tr>
+
+                                </thead>
+                                <tbody id="grid_listitem">
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                                <tbody id="tr_Foot">
+                                    <tr>
+                                        <td colspan="3 ">
+
+                                            <a href="#"  class="btn btn-success btn-s-xs js-modal-register"><i class="fa  fa-plus"></i>Khóa học</a>
+                                            <a href="#"  class="btn btn-success btn-s-xs dkytailieu"><i class="fa  fa-plus"></i>Tài liệu học</a>
+                                            
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>    <button type="button" id="Button3" class="btn btn-success btn-s-xs" ><i class="fa fa-dollar"></i>Thu học phí</button>
+</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </section>
+                </form>
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+    </section>
+
+   
+    
+   
+
+</section>
+
+
+                            <!-- /.vbox -->
+                        </section>
+                        <!-- /.section-layout-2 -->
+
+                    </section>
+                    <!-- /.hbox.stretch -->
+
+                </section>
+                <!-- /#content -->
+            
+
+<style>
+    #nav {
+        height: 51px;
+        position: absolute;
+     
+        /*transition: top 0.2s ease-in-out;*/
+        width: 100%;
+        z-index: 100;
+    }
+
+    @media(max-width:767px) {
+        #nav {
+            height: auto;
+            position: fixed;
+            top: 46px !important;
+            /*transition: top 0.2s ease-in-out;*/
+            width: 50%;
+            z-index: 100;
+            display: none;
+            border: 1px solid rgb(195, 202, 208);
+            -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+        }
+
+        .nav > li {
+            width: 100%;
+        }
+    }
+
+    #nav.active-block {
+        display: block;
+    }
+
+    #nav.nav-up {
+        top: -51px;
+    }
+
+    #nav.nav-down {
+        top: 0;
+        position: fixed;
+    }
+
+    .item-dropdown-top-menu .active {
+        background-color: #dae2f1;
+    }
+</style>
+                </section>
+                <!-- /#content -->
+
+            </section>
+            <!-- /.hbox -->
+
+        </section>
+        <!-- /.vbox -->
+</div>
+    </section>
+<?php echo $__env->make('partials/dangkikh', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>;
+<?php echo $__env->make('partials/dangkytailieu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>;
+    
+    <!-- /#wrapper -->
+
+     
+     
+    
+     
+   
+     
+    
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo e(asset('js/tasks.js')); ?>"></script>
+    
+    
+     <script>
+    function myFunction1() {
+      var x = document.getElementById("ngaysinh1").value;
+      
+      var y = x.slice(0,4);
+    
+      var d = new Date();
+      var c= d.getFullYear();
+    
+      var age= c-y;
+      document.getElementById("tuoi1").value = age;
+    }
+
+  </script>
+  <script language="javascript">
+
+    document.getElementById("hocsinh1").onclick = function () {
+        document.getElementById("student1").style.display = 'block';
+        document.getElementById("alumnus1").style.display = 'none';
+        document.getElementById("person1").style.display = 'none';
+    };
+
+    document.getElementById("sinhvien1").onclick = function () {
+        document.getElementById("alumnus1").style.display = 'block';
+        document.getElementById("person1").style.display = 'none';
+        document.getElementById("student1").style.display = 'none';
+
+    };
+    document.getElementById("dilam1").onclick = function () {
+        document.getElementById("person1").style.display = 'block';
+        document.getElementById("student1").style.display = 'none';
+        document.getElementById("alumnus1").style.display = 'none';
+      
+  };
+
+</script>
+
+   <script>
+    function myFunction() {
+      var x = document.getElementById("ngaysinh").value;
+      
+      var y = x.slice(0,4);
+    
+      var d = new Date();
+      var c= d.getFullYear();
+    
+      var age= c-y;
+      document.getElementById("tuoi").value = age;
+    }
+
+  </script>
+  <script language="javascript">
+
+    document.getElementById("hocsinh").onclick = function () {
+        document.getElementById("student").style.display = 'block';
+        document.getElementById("alumnus").style.display = 'none';
+        document.getElementById("person").style.display = 'none';
+    };
+
+    document.getElementById("sinhvien").onclick = function () {
+        document.getElementById("alumnus").style.display = 'block';
+        document.getElementById("person").style.display = 'none';
+        document.getElementById("student").style.display = 'none';
+
+    };
+    document.getElementById("dilam").onclick = function () {
+        document.getElementById("person").style.display = 'block';
+        document.getElementById("student").style.display = 'none';
+        document.getElementById("alumnus").style.display = 'none';
+      
+  };
+
+</script>
+
+<!-- datatable -->
+<script type="text/javascript">
+        $(document).ready(function() {
+            $("#DataList").DataTable({
+                "aLengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Tất cả"]],
+                "iDisplayLength": 10,
+                "oLanguage": {
+                    "sLengthMenu": "Hiển thị _MENU_ dòng mỗi trang",
+                    "oPaginate": {
+                        "sFirst": "<span class='glyphicon glyphicon-step-backward' aria-hidden='true'></span>",
+                        "sLast": "<span class='glyphicon glyphicon-step-forward' aria-hidden='true'></span>",
+                        "sNext": "<span class='glyphicon glyphicon-triangle-right' aria-hidden='true'></span>",
+                        "sPrevious": "<span class='glyphicon glyphicon-triangle-left' aria-hidden='true'></span>"
+                    },
+                    "sEmptyTable": "Không có dữ liệu",
+                    "sSearch": "Tìm kiếm:",
+                    "sZeroRecords": "Không có dữ liệu",
+                    "sInfo": "Hiển thị từ _START_ đến _END_ trong tổng số _TOTAL_ ",
+                    "sInfoEmpty" : "Không tìm thấy",
+                    "sInfoFiltered": " (trong tổng số _MAX_ dòng)"
+                }
+            });
+        });
+    </script>
+
+  <!-- ajax đăng kí khóa học -->
+  <script>
+        
+        $( document ).ready(function() {
+        
+        $('#chinhanh').change(function(event) {
+            var idchinhanh=$(this).val();
+           
+            $.get('ajax/chuongtrinh/'+idchinhanh,function(data){
+               $('#chuongtrinh').html(data);
+            });
+        });
+         $('#chuongtrinh').change(function(event) {
+            var idchuongtrinh=$(this).val();
+          
+            $.get('ajax/khoahoc/'+idchuongtrinh,function(data){
+               $('#khoahoc').html(data);
+            });
+        });
+           $('#khoahoc').change(function(event) {
+            var idkhoahoc=$(this).val();
+           
+            $.get('ajax/lophoc/'+idkhoahoc,function(data){
+               $('#lophoc').html(data);
+            });
+              $.get('ajax/hocphi/'+idkhoahoc,function(data){
+               $('#hocphi').html(data);
+            });
+        });
+            $('#khuyenmai').change(function(event) {
+
+
+            var idkhuyenmai=$(this).val();
+            var hocphi=$('#hp').val();
+            $('#giam').attr('value',(idkhuyenmai/100)*hocphi);
+              $('#phaithu').attr('value',(hocphi-(idkhuyenmai/100)*hocphi));
+          
+        });
+         
+      });
+    </script>
+<script>
+
+    $(function () {
+
+        $(".js-modal-register").click(function (event) {
+            event.preventDefault();
+            $("#dangkykhoahoc").modal('show');
+        })
+        let URL = '<?php echo e(route('ajax_post.register')); ?>'
+        $('.js-btn-login').click(function (e) {
+            e.preventDefault();
+            let $this = $(this);
+            let $domForm = $this.closest('form');
+
+            $.ajax({
+                url: URL,
+                data: $domForm.serialize(),
+                method : "POST",
+            }).done(function (results) {
+                $("#dangkykhoahoc").modal('hide');
+                $("#form-register")[0].reset();
+                $('#body').html(results);
+              
+            }).fail(function (data) {
+                var errors = data.responseJSON;
+                $.each(errors.errors, function (i, val) {
+                    $domForm.find('select[name=' + i + ']').siblings('.error-form').text(val[0]);
+                });
+            });
+        });
+    })
+
+    // ajax đăng ký tài liệu 
+     $(function () {
+
+        $(".dkytailieu").click(function (event) {
+            event.preventDefault();
+            $("#dangkytaileu").modal('show');
+        })
+        let URL = '<?php echo e(route('ajax_post.dangkytailieu')); ?>'
+        $('.js-btn-login').click(function (e) {
+            e.preventDefault();
+            let $this = $(this);
+            let $domForm = $this.closest('form');
+
+            $.ajax({
+                url: URL,
+                data: $domForm.serialize(),
+                method : "POST",
+            }).done(function (results) {
+                $("#dangkytailieu").modal('hide');
+                $("#form-dangkytailieu")[0].reset();
+                $('#body').html(results);
+              
+            }).fail(function (data) {
+                var errors = data.responseJSON;
+                $.each(errors.errors, function (i, val) {
+                    $domForm.find('select[name=' + i + ']').siblings('.error-form').text(val[0]);
+                });
+            });
+        });
+    })
+</script>
+    <!-- đăng ký -->
+
+   
+    
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+</body>
+
+</html>
+
+   
+
+
+
+
+
+<?php /**PATH C:\xampp\htdocs\alibaba2\resources\views/admin/dangkykhoahoc/dkykhoahoc.blade.php ENDPATH**/ ?>

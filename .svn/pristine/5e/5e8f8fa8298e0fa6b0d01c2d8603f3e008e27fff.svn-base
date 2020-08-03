@@ -1,0 +1,81 @@
+<?php $__env->startSection('content'); ?>
+ <section id="content">
+                    <section class="hbox stretch">
+
+                        <section class="section-layout-2">
+                            
+
+<section class="vbox">
+
+    <section class="scrollable wrapper w-f">
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+
+              
+                <div class="statistic"> 
+                    <div class="row"> 
+                        <div class="col-lg-4 col-md-6 m-t text-center btn-manager">
+                            <a href="chuong-trinh/danhsach" class="block padder-v hover">
+                                <span class="i-s i-s-2x">
+                                    <i class="i i-hexagon2 i-s-base text-success-lt hover-rotate"></i>
+                                    <i class="fa fa-archive text-white"></i>
+                                </span>
+                                <span class="clear">
+                                    <span class="h3 block m-t-xs text-warning">Chương Trình, Khóa Học</span>
+                                    <small class="text-muted text-u-c">Thêm xóa sửa chương trình và khóa học</small>
+                                </span>
+                            </a>
+                        </div>  
+                         <div class="col-lg-4 col-md-6 m-t text-center btn-manager">
+                            <a href="/Default.aspx?mod=khoahoc!khoahoc_chinhanh" class="block padder-v hover">
+                                <span class="i-s i-s-2x">
+                                    <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                                    <i class="i i-settings icon text-white"></i>
+                                </span>
+                                <span class="clear">
+                                    <span class="h3 block m-t-xs text-warning">Cài đặt khóa học</span>
+                                    <small class="text-muted text-u-c">Danh sách khóa học theo Chi Nhánh</small>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 m-t text-center btn-manager">
+                            <a href="/Default.aspx?mod=khoahoc!thongke_dangky" class="block padder-v hover">
+                                <span class="i-s i-s-2x">
+                                    <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                                    <i class="fa fa fa-bar-chart-o text-white"></i>
+                                </span>
+                                <span class="clear">
+                                    <span class="h3 block m-t-xs text-warning">Thống kê</span>
+                                    <small class="text-muted text-u-c">Số lượng đăng ký khóa học</small>
+                                </span>
+                            </a>
+                        </div>
+
+
+                        
+                      
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+    </section>
+    <!-- /.scrollable .wrapper -->
+
+
+</section>
+                            <!-- /.vbox -->
+                        </section>
+                        <!-- /.section-layout-2 -->
+
+                    </section>
+                    <!-- /.hbox.stretch -->
+
+                </section>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin/index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\alibaba\resources\views/admin/chuongtrinh-khoahoc/chuongtrinh-home.blade.php ENDPATH**/ ?>

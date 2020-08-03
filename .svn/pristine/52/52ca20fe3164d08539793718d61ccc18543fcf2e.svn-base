@@ -1,0 +1,289 @@
+<?php $__env->startSection('content'); ?>
+<section class="hbox stretch">
+
+<section class="section-layout-2">
+      
+<section class="vbox">
+    
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="menu-option-top1 panel b-a m-b-sm">
+                <div class="row m-n">
+                    <div class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="javascript:add_hocvien()" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-warning hover-rotate"></i>
+                                <i class="i i-plus2 text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-danger">Thêm mới</span>
+                                <small class="text-muted">Học Viên</small>
+                            </span>
+                        </a>
+                    </div>
+                    <div id="menutop_search" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=hocvien!search" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-success-lt hover-rotate"></i>
+                                <i class="fa fa-list text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-success">Danh sách</span>
+                                <small class="text-muted">Học viên</small>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div id="menutop_tiemnang" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=hocvien!tiemnang" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-success-dker hover-rotate"></i>
+                                <i class="fa fa-star text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-success">Học viên</span>
+                                <small class="text-muted">Tiềm năng</small>
+                            </span>
+                        </a>
+                    </div>
+                   
+                    <div id="menutop_History-registry" class="item-menu col-md-2 b-r m-t-xs m-b-xs item-active">
+                        <a href="/Default.aspx?mod=hocvien!History-registry" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-primary hover-rotate"></i>
+                                <i class="i i-history icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-primary">Lịch sử</span>
+                                <small class="text-muted">Đăng Ký</small>
+                            </span>
+                        </a>
+                    </div>
+                    <div id="menutop_thongke" class="item-menu col-md-2 m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=hocvien!thongke" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                                <i class="i i-stats icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-primary">Thống kê</span>
+                                <small class="text-muted">Học viên</small>
+                            </span>
+                        </a>
+                    </div>
+
+                     <div id="menutop_thongke_dauvao" class="item-menu col-md-2 m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=hocvien!thongke_dauvao" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                                <i class="i i-stats icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-primary">TK Bài test</span>
+                                <small class="text-muted">Test đầu vào</small>
+                            </span>
+                        </a>
+                    </div>
+                      <div id="menutop_danhsach_nghihoc" class="item-menu col-md-2 m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=hocvien!danhsach_nghihoc" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                                <i class="i i-stats icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-primary">Nghỉ học</span>
+                                <small class="text-muted">Học viên Vắng</small>
+                            </span>
+                        </a>
+                    </div>
+                    <div id="menutop_Danhsach_14days" class="item-menu col-md-2 m-t-xs m-b-xs ">
+                        <a href="/Default.aspx?mod=hocvien!Danhsach_14days" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                                <i class="i i-stats icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-primary">Gần Kết Khóa</span>
+                                <small class="text-muted">14 Ngày</small>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<span id="ctl10_menutop_script_menutop"> <script>document.getElementById("menutop_History-registry").classList.add('item-active');</script></span>
+    <section class="scrollable wrapper">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+
+                <section class="panel panel-default">
+                    <div class="panel-heading">
+                        <p class="inline m-b-xs m-t-xs font-bold">
+                            LỊCH SỬ ĐĂNG KÝ
+                        </p>
+                        <div id="toolbar" class="pull-right">
+                            <a href="javascript:tableToExcel()" title="Xuất file excel" class="btn btn-default btn-sm">
+                                <div class="iconBox color" original-title="Xuất Excel" id="Div1">
+                                    <img alt="document" src="/images/icon/excel-icon.gif">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="row wrapper">
+                        <div class="col-sm-12">
+                       
+                                <form id="form-lichsudangky" method="post"  class="form-inline" role="form" >
+                                 <?php echo csrf_field(); ?>
+                                    <div class="form-group">
+                                        <label class="control-label">Mã HV hoặc Tên</label>
+                                         <input name="name" type="text" id="ctl10_txtsearch" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Đăng ký từ Ngày</label>
+                                        <input type="text"  name="fromdate" class="form-control Datepicker">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Đến Ngày</label>
+                                        <input type="text"  name="todate" class="form-control Datepicker">
+                                    </div>
+                                    
+                            <button type="submit" class="btn btn-primary js-btn-lichsudangky"><i class="fa fa-search"></i> Tìm</button>
+                     
+
+                                </form>
+                          
+                        </div>
+                    </div>
+                    <div class="table-responsive listing">
+
+                        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped b-t b-light" id="lsdangki">
+                            
+                            <thead>
+                                <tr>
+                                    <th class="head0">MÃ ĐK</th>
+                                    <th class="head1">Mã Học Viên</th>
+                                    <th class="head1">Họ Tên</th>
+                                    <th class="head0">Ngày đăng ký</th>
+                                    <th class="head1">Quản lý</th>
+                                    <th class="head0">Số tiền</th>
+                                  
+                                    <th class="head1">Hành động</th>
+                                </tr>
+                            </thead>
+                            <tbody id="showlist"> 
+                             <?php if($dangky): ?>
+                             <?php $__currentLoopData = $dangky; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dk): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                             <tr>
+                                 <td><?php echo e($dk->MADK); ?></td>
+                                 <td><?php echo e($dk->Hocsinh->MAHS); ?></td>
+                                 <td><?php echo e($dk->Hocsinh->ten); ?></td>
+                                 <td><?php echo e($dk->created_at); ?></td>
+                                 <td></td>
+                                 <td><?php echo number_format($dk->Tonghocphi); ?> đ</td>
+                                 <td class="text-center"> <span class="input-group-btn">
+                                    <button data-toggle="dropdown" class="dropdown-toggle btn btn-xs btn-default" type="button"> 
+                                    <i class="i i-ellipsis"></i>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right">
+                                    <li> 
+                                    <a href="/module/hocvien/print/print_select.aspx?idlenh=2219" target="_blank">
+                                    <i class="fa fa-print"></i> In phiếu  </a>
+                                    </li>                
+                                    <li> 
+                                    <a href="/Default.aspx?mod=hocvien!dangky_group&amp;idhocvien=3831&amp;idedit=2219" title="Sửa">
+                                    <i class="fa fa-edit"></i> Sửa phiếu  </a>
+                                    </li>                
+                                    <li> 
+                                    <a href="javascript:Thu_hocphi('2219')" title="thu hoc phi">
+                                    <i class="fa fa-money"></i> Thu học phí </a></li>               
+                                     <li> <a href="javascript:Del_phieudangky('2219')" title="Sửa">
+                                     <i class="fa fa-times"></i> Hủy phiếu đăng ký  </a>
+                                     </li>           
+                                      </ul>        
+                                      </span></td>
+                             </tr>
+                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                             <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+
+</section>
+
+<div class="tooltip_pj" id="tooltipbox" style="display: none;"></div>
+
+
+                            <!-- /.vbox -->
+                        </section>
+                        <!-- /.section-layout-2 -->
+
+                    </section>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+
+ 
+<script>
+
+          $(document).ready(
+          function () {
+             $(".Datepicker").datepicker({
+              dateFormat: 'dd-mm-yy',
+              changeMonth: true, //Tùy chọn này cho phép người dùng chọn tháng
+              changeYear: true, //Tùy chọn này cho phép người dùng lựa chọn từ phạm vi năm
+                                        
+          });
+         }
+                                    
+        );
+
+        // thống kê đăng ký theo ngày, tháng ,tên hoc viên,mã học viên
+ $(function () {
+
+    let URL = '<?php echo e(route('ajax_post.lichsudangky')); ?>';
+
+$('.js-btn-lichsudangky').click(function (e) {
+
+    e.preventDefault();
+  
+    let $this = $(this);
+
+let $domForm = $this.closest('#form-lichsudangky');
+     
+    
+    $.ajax({
+        url: URL,
+         data: new FormData($("form")[0]),
+                contentType: false,
+                processData: false,
+      method : "POST",
+    }).done(function (data) {
+    
+         $('tbody').html(data);
+    }).fail(function (data) {
+        var errors = data.responseJSON;
+        $.each(errors.errors, function (i, val) {
+            $domForm.find('input[name=' + i + ']').siblings('.error-form').text(val[0]);
+        });
+    });
+});
+
+
+})
+
+
+        
+      
+ </script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\alibaba2\resources\views/admin/hocvien/lichsudangky.blade.php ENDPATH**/ ?>

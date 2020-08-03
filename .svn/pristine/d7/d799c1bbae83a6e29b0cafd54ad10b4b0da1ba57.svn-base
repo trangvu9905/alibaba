@@ -1,0 +1,107 @@
+<div class="row">
+        <div class="col-sm-12">
+            <div class="menu-option-top1 panel b-a m-b-sm">
+                <div class="row m-n">
+                     <div id="menutop_lophoc_waitopen" class="item-menu col-md-2 b-r m-t-xs m-b-xs item-active">
+                        <a href="lop-hoc/chomolop" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-success-lt hover-rotate"></i>
+                                <i class="i i-cube icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-success-lt">Lớp học <br> chờ mở  </span>
+                                
+                            </span>
+                        </a>
+                    </div> 
+                    <div id="menutop_lophoc" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="lop-hoc/lopdanghoc" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-primary hover-rotate"></i>
+                                <i class="i i-cube icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-primary">Lớp học <br>  đang học</span>
+                                
+                            </span>
+                        </a>
+                    </div>
+                    <div id="menutop_lophoc_end" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="lop-hoc/lopketthuc" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-warning hover-rotate"></i>
+                                <i class="i i-cube icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-danger">Lớp học <br> đã kết thúc</span>
+                                
+                            </span>
+                        </a>
+                    </div>
+             
+                    <div id="menutop_diemdanh" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=lophoc!diemdanh" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-success-lt hover-rotate"></i>
+                                <i class="fa fa-check-circle text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-success">Điểm danh</span>
+                                <small class="text-muted">Đánh giá ngày</small>
+                            </span>
+                        </a>
+                    </div> 
+                        <div id="menutop_nhapdiem" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=lophoc!nhapdiem" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-success-lt hover-rotate"></i>
+                                <i class="fa fa-edit text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-success">Nhập điểm</span>
+                                <small class="text-muted">Kết quả học tập</small>
+                            </span>
+                        </a>
+                    </div> 
+                     <div id="menutop_tkb_statics" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=lophoc!tkb_statics" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-success-lt hover-rotate"></i>
+                                <i class="i i-calendar text-white text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-success-lt">Thời khóa biểu</span>
+
+                             </span>
+                        </a>
+                    </div> 
+                   <div id="menutop_phonghoc" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=lophoc!phonghoc" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                                <i class="fa fa-th icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-info">Phòng học</span>
+                                <small class="text-muted">Quản lý</small>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div id="menutop_lophoc_baihoc" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=lophoc!lophoc_baihoc" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-info  hover-rotate"></i>
+                                <i class="fa fa-book icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-info ">Bài học</span>
+                                <small class="text-muted">Theo lớp</small>
+                            </span>
+                        </a>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
