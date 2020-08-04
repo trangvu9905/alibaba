@@ -1,0 +1,966 @@
+<?php $__env->startSection('content'); ?>
+ <section id="content">
+                    <section class="hbox stretch">
+
+                        <section class="section-layout-2">
+                            
+
+ 
+<section class="vbox">
+    
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="menu-option-top1 panel b-a m-b-sm">
+                <div class="row m-n">
+ 
+                    <div id="menutop_danhsach" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=khoahoc!danhsach" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-success-lt hover-rotate"></i>
+                                <i class="fa fa-archive text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-success">Khóa Học</span>
+                                <small class="text-muted">Quản lý</small>
+                            </span>
+                        </a>
+                    </div> 
+                    <div id="menutop_khoahoc_chinhanh" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=khoahoc!khoahoc_chinhanh" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                                <i class="i i-settings text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-info">Cài Đặt</span>
+                                <small class="text-muted">Chi Nhánh</small>
+                            </span>
+                        </a>
+                    </div> 
+                     <div id="menutop_thongke_dangky" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                          <a href="/Default.aspx?mod=khoahoc!thongke_dangky" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                                <i class="fa fa-bar-chart-o text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-info">Thống kê</span>
+                                <small class="text-muted">Đăng ký</small>
+                            </span>
+                        </a>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<span id="ctl10_menutop_script_menutop"> <script>document.getElementById("menutop_danhsach").classList.add('item-active');</script></span>
+    <section class="scrollable wrapper">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+
+                <section class="panel panel-default">
+                <div class="panel-heading">
+                        <p class="inline m-b-xs m-t-xs font-bold">
+                            
+                            DANH SÁCH CHƯƠNG TRÌNH
+                        </p>
+                        <div class="pull-right">
+                            
+                            <a href="" class="btn btn-default btn-sm themchuongtrinh" title="Thêm một chương trình"><i class="i i-plus2"></i> Thêm chương trình</a>
+                             <a href="" class="btn btn-default btn-sm themkhoahoc" title="Thêm một khóa học"><i class="i i-plus2"></i> Thêm khóa học</a>
+                            
+                       
+
+                             </div>
+                            
+                        </div>
+                        <div class="clearfix"></div>
+                  
+                   
+
+                    <div class="table-responsive">
+
+                        
+                        <table class="table b-t b-light" id="chuongtrinh1">
+                            <thead>
+                                <tr>
+                                    
+                                    <th class="th-sortable text-center" data-toggle="class" >Ảnh chương trình
+                                    </th> 
+                                    <th class="th-sortable text-center" data-toggle="class" >Mã chương trình
+                                    </th>
+                                    <th class="th-sortable text-center" data-toggle="class">Tên chương trình
+                                    </th>
+                                     <th class="th-sortable text-center" data-toggle="class">Mô tả
+                                    </th> 
+                                   
+                                     <th class="text-center">Chức năng</th>
+                                     <th class="text-center">Xem khóa học thuộc chương trình</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 <?php if($chuongtrinh): ?>
+                                <?php $__currentLoopData = $chuongtrinh; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ct): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                               <tr>
+                                  
+                                  <td class="text-center"><img src="<?php echo e(url('')); ?>/upload/<?php echo e($ct->logo); ?>" alt="" width="120px"></td>
+                                   <td class="text-center"><?php echo e($ct->MACT); ?></td>
+                                   <td class="text-center"><?php echo e($ct->ten); ?></td>
+                                   <td class="text-center"><?php echo $ct->mota; ?></td>
+                                   <td class="text-center">
+                                       <a  onclick="event.preventDefault();editchuongtrinh(<?php echo e($ct->id); ?>)" href="#" class="btn btn-default btn-sm m-r-xs"><i class="fa fa-pencil"></i> Sửa</a>
+                                       <a href="<?php echo e(route('ajax_xoachuongtrinh',$ct->id)); ?>" class="btn btn-default btn-sm js-xoachuongtrinh"><i class="fa fa-times "></i> Xóa</a>
+                                   </td>
+                                   <td class="text-center">
+                                       <a onclick="event.preventDefault();hienthikhoahoc(<?php echo e($ct->id); ?>)" href="" class="btn btn-default btn-sm "><i class="fa fa-plus-circle"></i> Danh sách khóa học</a>
+                                   </td>
+                               </tr>
+                               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                               <?php endif; ?>
+                            </tbody>
+                        </table>
+                        
+
+                    </div> 
+                </section>
+            </div>
+        </div>
+    </section> 
+</section>
+
+
+
+
+
+
+                            <!-- /.vbox -->
+                        </section>
+                        <!-- /.section-layout-2 -->
+
+                    </section>
+                    <!-- /.hbox.stretch -->
+
+                </section>
+                <!-- /#content -->
+<!-- modal thêm chường trinh -->
+  <div class="modal fade" id="modal-themchuongtrinh">
+         <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h2 class="modal-title">Thêm mới chương trình</h2>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="" method="POST" id="form-themchuongtrinh" enctype="multipart/form-data">
+                        <?php echo csrf_field(); ?>
+                       
+                
+                  <div class="col-sm-6"> 
+                    <div class="form-group">
+                        <label class="control-label">Ảnh chương trình </label>
+                        <input type="file" name="img"  class="form-control">
+                        <span class="error-form"></span>
+                    </div> 
+                  </div>
+                    <div class="col-sm-6"> 
+                    <div class="form-group">
+                      
+                       <div class="form-group">
+                        <label class="control-label">Mã chương trình</label>
+                        <input type="text" name="mact"  class="form-control">
+                        <span class="error-form"></span>
+                    </div> 
+                         
+                    </div> 
+                  </div>
+                  <div class="col-md-12">
+                   
+                 
+                    <div class="form-group">
+                        <label class="control-label">Tên chương trình</label>
+                        <input type="text" name="name"  class="form-control">
+                        <span class="error-form"></span>
+                    </div> 
+                
+                
+                  </div>
+                 
+                  <div class="col-sm-12">
+                       <div class="form-group">
+                        <label class="control-label">Giới thiệu chương trình </label>
+
+                   <textarea id="editor1" name="gioithieu"></textarea>
+                   <input type="hidden" name="gioithieu_hi" id="gioithieu_hi">
+                  
+                    <span class="error-form"></span>
+                   
+                    </div> 
+                  </div>
+                   <div class="col-sm-12">
+                     <table cellpadding="0" cellspacing="0" border="0" class="stdtable">
+                    <thead>
+                 
+                        <tr>
+                            <th style="width: 400px">Chi Nhánh</th>
+                            <th style="text-align: center">Chọn</th>
+                        </tr>
+                    </thead>
+              <tbody id="ctl10_showlist_cn">   
+              <?php $__currentLoopData = $chinhanh; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cn): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>    
+                <tr>
+                  <td><?php echo e($cn->ten); ?></td> 
+                  <td class="text-center"><label class="radio i-checks cursor_hand"> 
+                   <input value="<?php echo e($cn->id); ?>" name="chinhanh[]" id="cn_<?php echo e($cn->id); ?>" type="checkbox"><i></i> 
+                 </label>
+               </td> 
+                </tr>  
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>  
+              </tbody>
+               </table>
+              
+                   </div>
+                 
+      
+            <div class="clearfix" style="clear:both;height:30px;text-align:center"> 
+           </div>
+               
+                        <button type="submit" class="btn btn-primary js-btn-themchuongtrinh">Thêm mới </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- modal sửa chương trinh -->
+ <div class="modal fade" id="modal-suachuongtrinh">
+         <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h2 class="modal-title">Sửa chương trình</h2>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="" method="POST" id="form-suachuongtrinh" enctype="multipart/form-data">
+                        <?php echo csrf_field(); ?>
+                       
+                
+                  <div class="col-sm-6"> 
+                    <div class="form-group">
+                        <label class="control-label">Ảnh chương trình </label>
+                        <input type="file" name="img"  class="form-control">
+                        <input type="hidden" name="img_hi" id="img_hi">
+                        <img src="" alt="" name="img_cu" id="img_cu" width="120px">
+                        <span class="error-form"></span>
+                        
+                    </div> 
+                  </div>
+
+                    <div class="col-sm-6"> 
+                    <div class="form-group">
+                      <label class="control-label">Mã chương trình</label>
+                        <input type="text" name="mact"  class="form-control">
+                        <span class="error-form"></span>
+                         
+                    </div> 
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="control-label">Tên chương trình</label>
+                        <input type="text" name="name"  class="form-control">
+                        <span class="error-form"></span>
+                    </div>
+                  </div>
+                  
+                  <div class="col-sm-12">
+                       <div class="form-group">
+                        <label class="control-label">Giới thiệu chương trình </label>
+
+                   <textarea id="editor2" name="gioithieu"></textarea>
+                   <input type="hidden" name="gioithieu_hi" id="gioithieu_hi">
+                  
+                    <span class="error-form"></span>
+                   
+                    </div> 
+                  </div>
+                   <div class="col-sm-12">
+                     <table cellpadding="0" cellspacing="0" border="0" class="stdtable">
+                    <thead>
+                 
+                        <tr>
+                            <th style="width: 400px">Chi Nhánh</th>
+                            <th style="text-align: center">Chọn</th>
+                        </tr>
+                    </thead>
+              <tbody id="ctl10_showlist_cn">   
+              <?php $__currentLoopData = $chinhanh; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cn): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>    
+                <tr>
+                  <td><?php echo e($cn->ten); ?></td> 
+                  <td class="text-center"><label class="radio i-checks cursor_hand"> 
+                   <input value="<?php echo e($cn->id); ?>" name="chinhanh[]" id="cn" type="checkbox"><i></i> 
+                 </label>
+               </td> 
+                </tr>  
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>  
+              </tbody>
+               </table>
+              
+
+
+
+                   </div>
+                 <input type="hidden" name="id" id="id">
+      
+            <div class="clearfix" style="clear:both;height:30px;text-align:center"> 
+           </div>
+               
+                        <button type="submit" class="btn btn-primary js-btn-suachuongtrinh">Sửa </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- xem khóa học thuộc chương trình -->
+
+    <div class="modal fade" id="modal-danhsachkhoahoc">
+         <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h2 class="modal-title">Danh sách khóa học</h2>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                   <div class="table-responsive">
+
+                        
+                        <table class="table " id="khoahoc_sua">
+                            <thead>
+                                <tr>
+                                    <th class="th-sortable text-center" data-toggle="class" >Tên khóa học
+                                    </th>
+                                    <th class="th-sortable text-center" data-toggle="class">Mã khóa học
+                                    </th>
+                                     <th class="th-sortable text-center" data-toggle="class">Cấp độ
+                                    </th> 
+                                    <th class="th-sortable text-center" data-toggle="class">Giáo trình
+                                    </th>
+                                     <th class="th-sortable text-center" data-toggle="class">Số giờ
+                                    </th>
+                                       <th class="th-sortable text-center" data-toggle="class">Học phí
+                                    </th>
+                                   
+                                     <th class="text-center">Chức năng</th>
+                                    
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                 
+                            </tbody>
+                        </table>
+                        
+
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- modal thêm khóa hoc  -->
+ <div class="modal fade" id="modal-themkhoahoc">
+         <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h2 class="modal-title">Thêm mới khóa học</h2>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="" method="POST" id="form-themkhoahoc" enctype="multipart/form-data">
+                        <?php echo csrf_field(); ?>  
+                  <div class="col-sm-6"> 
+                    <div class="form-group">
+                      
+                        <label class="control-label">Chọn chương trình</label>
+                         <select name="chuongtrinh" class="form-control" id="chuongtrinh">
+                            <?php $__currentLoopData = $chuongtrinh; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ct): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                           <option value="<?php echo e($ct->id); ?>"><?php echo e($ct->ten); ?></option>
+                          
+                           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                         </select>
+                        <span class="error-form"></span>
+                         
+                    </div> 
+                  </div>
+                   <div class="col-sm-6"> 
+                    <div class="form-group" >
+                       <label class="control-label">Chi nhánh có chương trình</label>
+                       <p class="control-label" id="chinhanh_kh" style="border:0,1px;border: solid; border-color:#99FF66; padding: 5px;" >
+                      
+                      </p>
+                       
+                         
+                    </div> 
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="row">
+                  <div class="col-sm-6"> 
+                    <div class="form-group">
+                        <label class="control-label">Tên khóa học</label>
+                        <input type="text" name="name"  class="form-control">
+                        <span class="error-form"></span>
+                    </div> 
+                  </div>
+                  <div class="col-sm-6"> 
+                    <div class="form-group">
+                        <label class="control-label">Mã khóa học</label>
+                        <input type="text" name="makh"  class="form-control">
+                        <span class="error-form"></span>
+                    </div> 
+                  </div>
+                   </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="row">
+                  <div class="col-sm-6"> 
+                    <div class="form-group">
+                        <label class="control-label">Cấp độ</label>
+                        <input type="text" name="capdo"  class="form-control">
+                        <span class="error-form"></span>
+                    </div> 
+                  </div>
+                  
+                  <div class="col-sm-6"> 
+                    <div class="form-group">
+                        <label class="control-label">Số giờ học</label>
+                        <input type="text" name="sogio"  class="form-control">
+                        <span class="error-form"></span>
+                    </div> 
+                  </div>
+                   </div>
+                  </div>
+                  <div class="col-sm-6"> 
+                    <div class="form-group">
+                        <label class="control-label">Học phí</label>
+                        <input type="text" name="hocphi"  class="form-control">
+                        <span class="error-form"></span>
+                    </div> 
+                  </div>
+                 
+
+                  <div class="col-sm-6"> 
+                    <div class="form-group">
+                        <label class="control-label">Giáo trình</label>
+                        <input type="text" name="giaotrinh"  class="form-control">
+                        <span class="error-form"></span>
+                    </div> 
+                  </div>
+                  
+                  <div class="col-sm-12">
+                       <div class="form-group">
+                        <label class="control-label">Giới thiệu khóa học </label>
+
+                   <textarea id="editor3" name="gioithieu"></textarea>
+                   <input type="hidden" name="gioithieu_hi" id="gioithieu_hi">
+                  
+                    <span class="error-form"></span>
+                   
+                    </div> 
+                  </div>
+                 
+      
+            <div class="clearfix" style="clear:both;height:30px;text-align:center"> 
+           </div>
+               
+                        <button type="submit" class="btn btn-primary js-btn-themkhoahoc">Thêm mới </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- sửa khóa học -->
+    <div class="modal fade" id="modal-suakhoahoc">
+         <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h2 class="modal-title">Sửa khóa học</h2>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="" method="POST" id="form-suakhoahoc" enctype="multipart/form-data">
+                        <?php echo csrf_field(); ?>
+    
+               
+                 <div class="col-sm-6"> 
+                    <div class="form-group">
+                      
+                        <label class="control-label">Chọn chương trình</label>
+                         <select name="chuongtrinh" class="form-control" id="chuongtrinh_edit">
+                            <?php $__currentLoopData = $chuongtrinh; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ct): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                           <option value="<?php echo e($ct->id); ?>"><?php echo e($ct->ten); ?></option>
+                          
+                           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                         </select>
+                        <span class="error-form"></span>
+                         
+                    </div> 
+                  </div>
+                   <div class="col-sm-6"> 
+                    <div class="form-group" >
+                       <label class="control-label">Chi nhánh có chương trình</label>
+                       <p class="control-label" id="chinhanh_kh_edit" style="border:0,1px;border: solid; border-color:#99FF66; padding: 5px;" >
+                      
+                      </p>
+                       
+                         
+                    </div> 
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="row">
+                  <div class="col-sm-6"> 
+                    <div class="form-group">
+                        <label class="control-label">Tên khóa học</label>
+                        <input type="text" name="name"  class="form-control">
+                        <span class="error-form"></span>
+                    </div> 
+                  </div>
+                  <div class="col-sm-6"> 
+                    <div class="form-group">
+                        <label class="control-label">Mã khóa học</label>
+                        <input type="text" name="makh"  class="form-control">
+                        <span class="error-form"></span>
+                    </div> 
+                  </div>
+                   </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="row">
+                  <div class="col-sm-6"> 
+                    <div class="form-group">
+                        <label class="control-label">Cấp độ</label>
+                        <input type="text" name="capdo"  class="form-control">
+                        <span class="error-form"></span>
+                    </div> 
+                  </div>
+                  
+                  <div class="col-sm-6"> 
+                    <div class="form-group">
+                        <label class="control-label">Số giờ học</label>
+                        <input type="text" name="sogio"  class="form-control">
+                        <span class="error-form"></span>
+                    </div> 
+                  </div>
+                   </div>
+                  </div>
+                  <div class="col-sm-6"> 
+                    <div class="form-group">
+                        <label class="control-label">Học phí</label>
+                        <input type="text" name="hocphi"  class="form-control">
+                        <span class="error-form"></span>
+                    </div> 
+                  </div>
+                 
+
+                  <div class="col-sm-6"> 
+                    <div class="form-group">
+                        <label class="control-label">Giáo trình</label>
+                        <input type="text" name="giaotrinh"  class="form-control">
+                        <span class="error-form"></span>
+                    </div> 
+                  </div>
+                  
+                  <div class="col-sm-12">
+                       <div class="form-group">
+                        <label class="control-label">Giới thiệu khóa học </label>
+
+                   <textarea id="editor4" name="gioithieu"></textarea>
+                   <input type="hidden" name="gioithieu_hi" id="gioithieu_hi">
+                  
+                    <span class="error-form"></span>
+                   
+                    </div> 
+                  </div>
+                  <input type="hidden" name="id" value="">
+                 
+      
+            <div class="clearfix" style="clear:both;height:30px;text-align:center"> 
+           </div>
+               
+                        <button type="submit" class="btn btn-primary js-btn-suakhoahoc">Sửa khóa học</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+<script> CKEDITOR.replace('editor1'); </script>
+<script> CKEDITOR.replace('editor2'); </script>
+<script> CKEDITOR.replace('editor3'); </script>
+<script> CKEDITOR.replace('editor4'); </script>
+  
+<script type="text/javascript">
+
+  // thêm chương trình
+    $(function () {
+
+        $(".themchuongtrinh").click(function (event) {
+            event.preventDefault();
+            $("#modal-themchuongtrinh").modal('show');
+        })
+        let URL = '<?php echo e(route('ajax_post.themchuongtrinh')); ?>';
+        $('.js-btn-themchuongtrinh').click(function (e) {
+
+            e.preventDefault();
+           let a=CKEDITOR.instances.editor1.getData();
+           $("#gioithieu_hi").attr('value',a);
+            let $this = $(this);
+
+     let $domForm = $this.closest('#form-themchuongtrinh');
+             
+            
+            $.ajax({
+                url: URL,
+                 data: new FormData($("#modal-themchuongtrinh form")[0]),
+                        contentType: false,
+                        processData: false,
+         method : "POST",
+            }).done(function (data) {
+                $("#modal-themchuongtrinh").modal('hide');
+                $("#form-themchuongtrinh")[0].reset();
+                 $('#chuongtrinh1 tbody').html(data);
+            }).fail(function (data) {
+                var errors = data.responseJSON;
+                $.each(errors.errors, function (i, val) {
+                    $domForm.find('input[name=' + i + ']').siblings('.error-form').text(val[0]);
+                });
+            });
+        });
+    })
+
+  // xóa chương trình
+  $(function () {
+$('body').on("click",'.js-xoachuongtrinh',function(event){
+  event.preventDefault();
+  let URL=$(this).attr('href');
+ 
+    let $this=$(this);
+    $.ajax({
+        url: URL,
+       
+      }).done(function(results){
+         if(results.code==200)
+         {
+            $this.parents("tr").remove();
+         }
+      }).fail(function (data) {
+       
+      });
+
+})
+})
+
+// sửa chương trình
+function editchuongtrinh(ct) {
+ 
+    $.ajax({
+
+        type: 'GET',
+        url: 'http://localhost:8000/alibaba2/public/chuong-trinh/getsua/'+ ct,
+        success: function(data) { 
+          
+            $("#form-suachuongtrinh input[name=name]").val(data.ct.ten);
+            // $('#form-suachuongtrinh select option').each(function() {
+            //          if($(this).val() == data.ct.idchinhanh) {
+            //          $(this).prop("selected", true);
+            //    }
+            //  });
+            $('#form-suachuongtrinh table tr td input').each(function() {
+                     
+                      $(this).prop("checked", false);
+                
+                 });
+            for (var i = 0; i < data.a.length; i++){
+               $('#form-suachuongtrinh table tr td input').each(function() {
+                      if($(this).val() == data.a[i]) {
+                      $(this).prop("checked", true);
+                }
+
+               });
+            }
+             $("#form-suachuongtrinh input[name=img_hi]").val(data.ct.logo);
+             $("#form-suachuongtrinh input[name=mact]").val(data.ct.MACT);
+             $("#form-suachuongtrinh input[name=id]").val(data.ct.id);
+           
+             CKEDITOR.instances.editor2.setData(data.ct.mota);
+
+        $("#form-suachuongtrinh #img_cu").attr('src','<?php echo e(url("")); ?>/upload/'+data.ct.logo);
+            $('#modal-suachuongtrinh').modal('show');
+        },
+        error: function(data) {
+            console.log(data);
+        }
+    });
+}
+
+$(function () {
+     
+        $('.js-btn-suachuongtrinh').click(function (e) {
+      e.preventDefault();
+       let a=CKEDITOR.instances.editor2.getData();
+           $("#form-suachuongtrinh #gioithieu_hi").attr('value',a);
+      let $this = $(this);
+     let $domForm = $this.closest('#form-suachuongtrinh');
+     
+      $.ajax({
+        url:'http://localhost:8000/alibaba2/public/chuong-trinh/postsua/'+$("#form-suachuongtrinh input[name=id]").val(),
+         data: new FormData($("#modal-suachuongtrinh form")[0]),
+                        contentType: false,
+                        processData: false,
+         method : "POST",
+      }).done(function (data) {
+        $("#modal-suachuongtrinh").modal('hide');
+        $("#form-suachuongtrinh")[0].reset();
+         $('#chuongtrinh1 tbody').html(data);
+      }).fail(function (data) {
+        var errors = data.responseJSON;
+        $.each(errors.errors, function (i, val) {
+          $domForm.find('input[name=' + i + ']').siblings('.error-form').text(val[0]);
+        });
+      });
+    });
+  })
+
+// hiển thị khóa học
+ function hienthikhoahoc(kh)
+ {
+ 
+    $.ajax({
+
+        type: 'GET',
+        url: 'http://localhost:8000/alibaba2/public/chuong-trinh/dskhoahoc/'+kh,
+        success: function(data) { 
+            $('#khoahoc_sua tbody').html(data);
+            $('#modal-danhsachkhoahoc').modal('show');
+            
+        },
+        error: function(data) {
+            console.log(data);
+        }
+    });
+ }
+
+ // ajax thêm khóa học
+ $(function () {
+
+        $(".themkhoahoc").click(function (event) {
+            event.preventDefault();
+            $("#modal-themkhoahoc").modal('show');
+        })
+        let URL = '<?php echo e(route('ajax_post.themkhoahoc')); ?>'
+        $('.js-btn-themkhoahoc').click(function (e) {
+
+            e.preventDefault();
+           let a=CKEDITOR.instances.editor3.getData();
+           $("#gioithieu_hi").attr('value',a);
+            let $this = $(this);
+
+     let $domForm = $this.closest('#form-themkhoahoc');
+             
+            
+            $.ajax({
+                url: URL,
+                 data: new FormData($("#modal-themkhoahoc form")[0]),
+                        contentType: false,
+                        processData: false,
+         method : "POST",
+            }).done(function (data) {
+                $("#modal-themkhoahoc").modal('hide');
+                $("#form-themkhoahoc")[0].reset();
+                
+            }).fail(function (data) {
+                var errors = data.responseJSON;
+                $.each(errors.errors, function (i, val) {
+                    $domForm.find('input[name=' + i + ']').siblings('.error-form').text(val[0]);
+                });
+            });
+        });
+    })
+
+ 
+
+  // xóa khóa học
+  $(function () {
+$('body').on("click",'.js-xoakhoahoc',function(event){
+  event.preventDefault();
+  let URL=$(this).attr('href');
+ 
+    let $this=$(this);
+    $.ajax({
+        url: URL,
+       
+      }).done(function(results){
+         if(results.code==200)
+         {
+            $this.parents("tr").remove();
+         }
+      }).fail(function (data) {
+       
+      });
+
+})
+})
+
+  // sửa khóa học
+  function editkhoahoc(kh) {
+    
+
+    $.ajax({
+
+        type: 'GET',
+        url:'http://localhost:8000/alibaba2/public/chuong-trinh/getsua-khoahoc/'+kh,
+        success: function(data) { 
+            $("#form-suakhoahoc input[name=name]").val(data.kh.ten);
+            $("#form-suakhoahoc input[name=makh]").val(data.kh.makh);
+            $("#form-suakhoahoc input[name=sogio]").val(data.kh.sogio);
+            $("#form-suakhoahoc input[name=hocphi]").val(data.kh.hocphi);
+            $("#form-suakhoahoc input[name=capdo]").val(data.kh.capdo);
+            $("#form-suakhoahoc input[name=giaotrinh]").val(data.kh.giaotrinh);
+            $("#form-suakhoahoc input[name=id]").val(data.kh.id);
+             // $('#form-suakhoahoc #chinhanh_sua option').each(function() {
+             //         if($(this).val() == data.kh.idchinhanh) {
+             //   $(this).prop("selected", true);
+             //   }
+             // });
+               $('#form-suakhoahoc #chuongtrinh_edit option').each(function() {
+                     if($(this).val() == data.kh.idchuongtrinh) {
+               $(this).prop("selected", true);
+               }
+             });
+           $.get('ajax/chuongtrinh-chinhanh/'+data.kh.idchuongtrinh,function(data){
+               $('#chinhanh_kh_edit').html(data);
+            });
+            CKEDITOR.instances.editor4.setData(data.kh.ghichu);
+           
+           
+              //$("#form-suachuongtrinh input[name=gioithieu_hi]").val(data.ct.mota);
+             
+
+        //$("#form-suakhoahoc #img_cu").attr('src','<?php echo e(url("")); ?>/upload/'+data.ct.logo);
+            $('#modal-suakhoahoc').modal('show');
+        },
+        error: function(data) {
+            console.log(data);
+        }
+    });
+      
+
+    
+    }
+
+// sửa khóa học
+$(function () {
+     
+        $('.js-btn-suakhoahoc').click(function (e) {
+      e.preventDefault();
+       let a=CKEDITOR.instances.editor4.getData();
+           $("#form-suakhoahoc #gioithieu_hi").attr('value',a);
+      let $this = $(this);
+     let $domForm = $this.closest('#form-suakhoahoc');
+     
+      $.ajax({
+        url: 'http://localhost:8000/alibaba2/public/chuong-trinh/postsua-khoahoc/'+$("#form-suakhoahoc input[name=id]").val(),
+         data: new FormData($("#modal-suakhoahoc form")[0]),
+                        contentType: false,
+                        processData: false,
+         method : "POST",
+      }).done(function (data) {
+        $("#modal-suakhoahoc").modal('hide');
+        $("#form-suakhoahoc")[0].reset();
+         $('#khoahoc_sua tbody').html(data);
+      }).fail(function (data) {
+        var errors = data.responseJSON;
+        $.each(errors.errors, function (i, val) {
+          $domForm.find('input[name=' + i + ']').siblings('.error-form').text(val[0]);
+        });
+      });
+    });
+
+
+  })
+
+// ajax sử lí 
+  $( document ).ready(function() {
+  
+         $('#chinhanh_sua').change(function(event) {
+            var idchinhanh=$(this).val();
+           
+            $.get('ajax/chuongtrinh/'+idchinhanh,function(data){
+               $('#chuongtrinh_sua').html(data);
+            });
+        });
+          var idchuongtrinh=$('#chuongtrinh').val();
+           
+            $.get('ajax/chuongtrinh-chinhanh/'+idchuongtrinh,function(data){
+               $('#chinhanh_kh').html(data);
+            });
+            
+
+           $('#chuongtrinh').change(function(event) {
+            var idchuongtrinh=$(this).val();
+           
+            $.get('ajax/chuongtrinh-chinhanh/'+idchuongtrinh,function(data){
+               $('#chinhanh_kh').html(data);
+            });
+        });
+
+             $('#chuongtrinh_edit').change(function(event) {
+            var idchuongtrinh=$(this).val();
+           
+            $.get('ajax/chuongtrinh-chinhanh/'+idchuongtrinh,function(data){
+               $('#chinhanh_kh_edit').html(data);
+            });
+        });
+       
+        
+           
+         
+      });
+
+
+
+
+</script>
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\alibaba2\resources\views/admin/chuongtrinh-khoahoc/dschuongtrinh.blade.php ENDPATH**/ ?>

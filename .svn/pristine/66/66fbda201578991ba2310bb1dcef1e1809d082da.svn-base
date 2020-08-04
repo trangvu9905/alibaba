@@ -1,0 +1,152 @@
+<?php $__env->startSection('content'); ?>
+<section id="content">
+                    <section class="hbox stretch">
+
+                        <section class="section-layout-2">
+<section class="vbox">
+    <section class="scrollable wrapper w-f">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+
+                <div class="statistic">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <a href="#" class="block padder-v hover">
+                                <span class="i-s i-s-2x pull-left m-r-sm">
+                                    <i class="i i-hexagon2 i-s-base text-warning hover-rotate"></i>
+                                    <i class="i i-study icon text-white"></i>
+                                </span>
+                                <span class="clear">
+                                    <span id="ctl21_counthv" class="h3 block m-t-xs text-warning">
+                                    
+                                <?php echo e($count_hv); ?>
+
+
+                                    </span>
+                                    <small class="text-muted text-u-c">Học viên</small>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <a href="#" class="block padder-v hover">
+                                <span class="i-s i-s-2x pull-left m-r-sm">
+                                    <i class="i i-hexagon2 i-s-base text-success-lt hover-rotate"></i>
+                                    <i class="i i-users2 i-sm text-white"></i>
+                                </span>
+                                <span class="clear">
+                                    <span id="ctl21_count_pdk" class="h3 block m-t-xs text-success"><?php echo e($count_pdk); ?></span>
+                                    <small class="text-muted text-u-c">Phiếu Đăng Ký</small>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <a href="#" class="block padder-v hover">
+                                <span class="i-s i-s-2x pull-left m-r-sm">
+                                    <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                                    <i class="i i-chart i-sm text-white"></i>
+                                </span>
+                                <span class="clear">
+                                    <span id="ctl21_count_waitingclass" class="h3 block m-t-xs text-info"><?php echo e($count_cxl); ?></span>
+                                    <small class="text-muted text-u-c">Chờ xét lớp</small>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <a href="#" class="block padder-v hover">
+                                <span class="i-s i-s-2x pull-left m-r-sm">
+                                    <i class="i i-hexagon2 i-s-base text-primary hover-rotate"></i>
+                                    <i class="i i-book i-sm text-white"></i>
+                                </span>
+                                <span class="clear">
+                                    <span id="ctl21_hv_inclass" class="h3 block m-t-xs text-primary">0</span>
+                                    <small class="text-muted text-u-c">Đang học</small>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.statistic -->
+
+      
+
+
+
+                <section class="panel panel-primary">
+                   
+                    <!-- /.panel-heading -->
+
+                    <div class="panel-body panel-body-full panel-body-relative vlt-bodyheader" >
+                         <div class="vlt-bodyheader">
+                        <strong>Thông báo - sự kiện</strong>
+                   </div>
+ 
+<div id="alertMessage" class="error"></div>
+ 
+
+        <div class="panel-body panel-body-full panel-body-relative">
+            <ul class="list-group slim-scroll" id="showlist_feed"></ul>
+
+
+        </div>
+           
+ 
+
+                        <a href="/?mod=feed!List_feed" class="btn btn-default btn-sm btn-more-right">Xem thêm
+                        </a>
+                    </div>
+                    <!-- /.panel-body -->
+                </section>
+                <!-- /.panel -->
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <section class="panel panel-primary">
+                            <div class="vlt-bodyheader">
+                                <strong>Công việc trong tuần</strong>
+                            </div>
+
+                       
+                                <ul id="ctl21_cvtrongtuan" class="list-group"><li class="list-group-item">Tuần này không có lịch hẹn</li></ul>
+                        </section>
+                        <!-- /.panel -->
+                    </div>
+                    <!-- /.col-md-6 -->
+
+                    <div class="col-lg-6">
+                        <section class="panel panel-primary">
+                           <div class="vlt-bodyheader">
+                                <strong>Công việc hôm nay</strong>
+                            </div>
+                                <ul class="nav nav-pills pull-right">
+                                </ul>
+                            
+                            <ul id="ctl21_cvhomnay" class="list-group"><li class="list-group-item">Hôm nay không có lịch hẹn</li></ul>
+                        </section>
+                        <!-- /.panel -->
+                    </div>
+                    <!-- /.col-md-6 -->
+                </div>
+                <!-- /.row -->
+
+
+            </div>
+            <!-- /.col-sm-9 -->
+
+            
+            <!-- /.col-sm-3 -->
+        </div>
+        <!-- /.row -->
+
+    </section>
+    <!-- /.scrollable .wrapper -->
+
+    
+    <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
+</section>
+</section>
+</section>
+</section>
+</section>
+</section>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\alibaba\resources\views/admin/tongquan.blade.php ENDPATH**/ ?>

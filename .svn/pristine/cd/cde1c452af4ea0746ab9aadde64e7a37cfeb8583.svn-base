@@ -1,0 +1,760 @@
+<?php $__env->startSection('content'); ?>
+<section id="content">
+                    <section class="hbox stretch">
+
+                        <section class="section-layout-2">
+                            
+
+
+<style>
+    .swal-wide{
+    width:10px !important;
+}
+ .bg-success-aler {
+       background-color: #FF0000;
+color: #FFFFFF;
+font-weight: bold;
+padding: 5px;
+border-radius: 3px;
+margin-right: 2px;
+    }
+    .ui-timepicker-standard {
+    position: absolute;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.form-horizontal .radio, .form-horizontal .checkbox { 
+    cursor:pointer;
+}
+.table tr:hover .btedit{
+    display:inherit;
+}
+.table tr .btedit {
+    display:none;
+}
+.cell_TKB {
+    border: thin solid #FF9900;
+    padding:3px;
+}
+
+</style>
+
+    <section class="vbox">
+        
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="menu-option-top1 panel b-a m-b-sm">
+                <div class="row m-n">
+                     <div id="menutop_lophoc_waitopen" class="item-menu col-md-2 b-r m-t-xs m-b-xs item-active">
+                        <a href="/Default.aspx?mod=lophoc!lophoc_waitopen" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-success-lt hover-rotate"></i>
+                                <i class="i i-cube icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-success-lt">Lớp học <br> chờ mở  </span>
+                                
+                            </span>
+                        </a>
+                    </div> 
+                    <div id="menutop_lophoc" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=lophoc!lophoc" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-primary hover-rotate"></i>
+                                <i class="i i-cube icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-primary">Lớp học <br>  đang học</span>
+                                
+                            </span>
+                        </a>
+                    </div>
+                    <div id="menutop_lophoc_end" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=lophoc!lophoc_end" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-warning hover-rotate"></i>
+                                <i class="i i-cube icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-danger">Lớp học <br> đã kết thúc</span>
+                                
+                            </span>
+                        </a>
+                    </div>
+             
+                    <div id="menutop_diemdanh" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=lophoc!diemdanh" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-success-lt hover-rotate"></i>
+                                <i class="fa fa-check-circle text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-success">Điểm danh</span>
+                                <small class="text-muted">Đánh giá ngày</small>
+                            </span>
+                        </a>
+                    </div> 
+                        <div id="menutop_nhapdiem" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=lophoc!nhapdiem" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-success-lt hover-rotate"></i>
+                                <i class="fa fa-edit text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-success">Nhập điểm</span>
+                                <small class="text-muted">Kết quả học tập</small>
+                            </span>
+                        </a>
+                    </div> 
+                     <div id="menutop_tkb_statics" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=lophoc!tkb_statics" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-success-lt hover-rotate"></i>
+                                <i class="i i-calendar text-white text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-success-lt">Thời khóa biểu</span>
+
+                             </span>
+                        </a>
+                    </div> 
+                   <div id="menutop_phonghoc" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=lophoc!phonghoc" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                                <i class="fa fa-th icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-info">Phòng học</span>
+                                <small class="text-muted">Quản lý</small>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div id="menutop_lophoc_baihoc" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=lophoc!lophoc_baihoc" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-info  hover-rotate"></i>
+                                <i class="fa fa-book icon text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-info ">Bài học</span>
+                                <small class="text-muted">Theo lớp</small>
+                            </span>
+                        </a>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<span id="ctl10_menutop_script_menutop"> <script>document.getElementById("menutop_lophoc_waitopen").classList.add('item-active');</script></span>
+        <section class="scrollable wrapper">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                <form method="post" id="form-timkhoahoc">
+                    <section class="panel panel-default">
+                      <div  class="panel-heading">
+                            <p class="inline m-b-xs m-t-xs font-bold">
+                                
+                                DANH SÁCH  CHỜ MỞ LỚP
+                            </p>
+                            <div class="pull-right">
+                    
+                                <a href="" title="Thêm một lớp học" class="btn btn-sm btn-success themlophoc">
+                                <i class="i i-plus2"></i> Thêm mới lớp học
+                                </a>
+                           
+                               <?php echo csrf_field(); ?>
+                    &nbsp;<select name="chinhanh" id="chinhanh_tim"  class="form-control pull-right" style="width:150px">
+                           <?php if($chinhanh): ?>
+                              <option value="0">Tất cả</option>
+                              <?php $__currentLoopData = $chinhanh; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cn): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                              <option value="<?php echo e($cn->id); ?>"><?php echo e($cn->ten); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+	                       <?php endif; ?>
+                       </select>
+                       
+
+                                
+                            </div>
+                            </form>
+                            <div class="clearfix"></div>
+                       </div>
+                   
+
+                        <div class="table-responsive">
+
+                        
+                        <table class="table b-t b-light" id="dyntable">
+                            <thead>
+                                <tr class="bg-info-ltest">
+                                   
+                                    <th style="width: 50px">STT
+                                    </th>
+                                    <th class="text-center">Tên khóa học
+                                    </th> 
+                                    <th class="text-center">Số lượng đăng ký
+                                    </th> 
+                                  
+                                    <th class="text-center" style="width: 220px">Chức năng</th> 
+                                </tr>
+                            </thead>
+                            <tbody id="khoahocdangki">
+                            <?php if($re): ?>
+                             <?php $__currentLoopData = $re; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dk): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <tr>
+                                    <td class="text-center"><?php echo e($loop->index+1); ?></td>
+                                    <td class="text-center"><?php echo e($dk['name']); ?></td>
+                                    <td class="text-center">
+                                    <a href="" onclick="event.preventDefault();hienthichomolop(<?php echo e($dk['idkhoahoc']); ?>)"> 
+                                    <span class="bg-success-aler"><?php echo e($dk['total']); ?></span>
+                                    </a>
+                                    </td>
+                             <td class="text-center">
+                                <a href=""  onclick="event.preventDefault();hienthilophoc(<?php echo e($dk['idkhoahoc']); ?>)"title="Xem danh sách lớp học" class="btn btn-default btn-sm m-r-xs" >
+                                    <i class="i i-plus2"></i> Danh sách lớp học
+                                </a>
+                                </td>
+                                </tr>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                        
+
+                    </div> 
+                </section>
+            </div>
+        </div>
+    </section> 
+</section> 
+
+
+                            <!-- /.vbox -->
+                        </section>
+                        <!-- /.section-layout-2 -->
+
+                    </section>
+                    <!-- /.hbox.stretch -->
+                </section>
+
+
+
+ 
+
+    <!-- modal thêm mới lớp hoc -->
+    <div class="modal fade" id="modal-themlophoc">
+    <div class="modal-dialog">
+
+    <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h2 class="modal-title  primecolor">Thêm mới lớp học</h2>
+            </div>
+            
+            <div class="modal-body" style="overflow: hidden;">
+             
+              
+                   <form action="" method="POST" id="form-themlophoc">
+                        <?php echo csrf_field(); ?>                      
+                        <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="control-label">Chọn chi nhánh:</label>
+                    <select name="chinhanh" id="chinhanh" class="form-control">
+                      <?php if($chinhanh): ?>
+                      <?php $__currentLoopData = $chinhanh; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cn): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <option value="<?php echo e($cn->id); ?>"><?php echo e($cn->ten); ?></option>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php endif; ?>
+                                
+                                                
+                   </select>
+                           
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="control-label">Chọn chương trình:</label>
+                    <div id="listchuongtrinh">
+                        <select id="chuongtrinh" class="form-control" name="chuongtrinh">
+                        <?php if($chuongtrinh): ?>
+                          <?php $__currentLoopData = $chuongtrinh; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ct): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                          <option value="<?php echo e($ct->id); ?>"><?php echo e($ct->ten); ?></option>
+                          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <?php endif; ?>
+                         </select>
+                    </div>
+                    <div id="listcapdo"></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class=" col-sm-12">
+                <div class="form-group">
+                    <label class="control-label">Chọn khóa học:</label>
+                    <div id="listkhoahoc">
+                        <select id="khoahoc" name="khoahoc" class="form-control">
+                        <?php if($khoahoc): ?>
+                          <?php $__currentLoopData = $khoahoc; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $kh): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                          <option value="<?php echo e($kh->id); ?>"><?php echo e($kh->ten); ?></option>
+                          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <?php endif; ?>
+                           
+                        </select></div>
+                </div>
+            </div>
+            <div class=" col-sm-12">
+                <div class="row">
+                    <div class="col-md-6">
+                    <div class="form-group">
+                    <label class="control-label">Tên lớp học</label>
+                    <input type="text" name="name" class="form-control" >
+                    <span class="error-form"></span>
+                </div>
+                    </div>
+                    <div class="col-md-6">
+                    <div class="form-group">
+                    <label class="control-label">Mã lớp học</label>
+                    <input type="text" name="malophoc" class="form-control">
+                </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-6">
+            <div class="form-group">
+            <label class="control-label">Sĩ số lớp</label>
+                    <input type="number" name="siso" class="form-control">
+                    <span class="error-form"></span>
+            </div> 
+
+            </div>
+            <div class="col-md-6">
+            <div class="form-group">
+            <label class="control-label">Mô tả</label>
+                    <input type="text" name="mota" class="form-control">
+                    <span class="error-form"></span>
+            </div> 
+
+            </div>
+           
+          
+            <div class="col-sm-12" id="Listkhofollow"></div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                      <button type="submit" class="btn btn-primary js-btn-themlophoc">Thêm mới lớp học</button>
+
+                </div>
+            </div>
+
+
+                       
+                    </form>
+               
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- modal hiển thị lớp hoc -->
+
+<div class="modal fade" id="modal-hienthilophoc">
+         <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h2 class="modal-title">Danh sách lớp học</h2>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                   <div class="table-responsive">
+
+                        
+                   <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="hienthilophoc">
+           
+            <thead>
+                <tr>
+                    <th class="text-center">STT</th>
+                    <th class="text-center">Mã lớp</th>
+                    <th class="text-center">Tên</th>
+                    <th class="text-center">Số lượng đăng ký</th>
+                    <th class="text-center">Hành động</th>
+                    
+
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+            
+            </tr>
+            </tbody>
+        </table>
+                        
+
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal danh sách chờ mở lớp -->
+ <div class="modal fade" id="modal-danhsachchomolop">
+         <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h2 class="modal-title">Danh sách chờ mở lớp</h2>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                   <div class="table-responsive">
+
+                        
+                   <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="lophocho">
+           
+            <thead>
+                <tr>
+                    <th class="text-center">STT</th>
+                    <th class="text-center">Tên</th>
+                    <th class="text-center">Điện thoại</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Ngày Đăng Ký</th>
+                    <th class="text-center">Học Thử</th>
+                    
+
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+            
+            </tr>
+            </tbody>
+        </table>
+                        
+
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal khai giảng lớp học -->
+
+    <div class="modal fade" id="modal-khaigianglop">
+    <div class="modal-dialog">
+
+    <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h2 class="modal-title  primecolor">Khai giảng lớp học </h2>
+        </div>
+            
+            <div class="modal-body" style="overflow: hidden;">
+              
+                   <form action="" method="POST" id="form-khaigianglop">
+                        <?php echo csrf_field(); ?>                      
+                        <div class="col-sm-12">
+                        <div class="form-group">
+                           <label class="control-label">Chi nhánh</label>
+                           <input type="text" name="chinhanh" class="form-control"  disabled >
+                        </div>
+                        </div>
+                        <div class="col-sm-12">
+                        <div class="form-group">
+                           <label class="control-label">Chương trình</label>
+                           <input type="text" name="chuongtrinh" class="form-control"  disabled >
+                        </div>
+                        </div>
+                        <div class="col-sm-12">
+                        <div class="form-group">
+                           <label class="control-label">Khóa học</label>
+                           <input type="text" name="khoahoc" class="form-control"  disabled >
+                        </div>
+                        </div>
+          
+            <div class=" col-sm-12">
+                <div class="row">
+                    <div class="col-md-6">
+                    <div class="form-group">
+                    <label class="control-label">Ngày bắt đầu</label>
+                    <input type="text" name="batdau" class="form-control " id="datepicker">
+                    <span class="error-form"></span>
+                </div>
+                    </div>
+                    <div class="col-md-6">
+                    <div class="form-group">
+                    <label class="control-label">Ngày kết thúc</label>
+                    <input type="text" name="ketthuc" class="form-control " id="datepicker1">
+                </div>
+                    </div>
+                </div>
+                
+            </div>
+           <input type="hidden" name="id" >     
+          
+            <div class="col-sm-12">
+                <div class="form-group">
+                      <button type="submit" class="btn btn-primary js-btn-khaigianglop">Khai giảng lớp</button>
+
+                </div>
+            </div>
+
+                    </form>
+               
+            </div>
+        </div>
+
+    </div>
+</div>
+
+ <?php $__env->stopSection(); ?>
+ <?php $__env->startSection('script'); ?>
+ <script>
+
+ 
+$(document).ready(
+                    function () {
+                        $("#datepicker").datepicker({
+                            dateFormat: 'dd-mm-yy',
+                            changeMonth: true, //Tùy chọn này cho phép người dùng chọn tháng
+                            changeYear: true //Tùy chọn này cho phép người dùng lựa chọn từ phạm vi năm
+                        });
+                    }
+                   
+            );
+            $(document).ready(
+                    function () {
+                        $("#datepicker1").datepicker({
+                            dateFormat: 'dd-mm-yy',
+                            changeMonth: true, //Tùy chọn này cho phép người dùng chọn tháng
+                            changeYear: true //Tùy chọn này cho phép người dùng lựa chọn từ phạm vi năm
+                        });
+                    }
+                   
+            );
+function hienthichomolop(dk)
+ {
+ 
+    $.ajax({
+
+        type: 'GET',
+        url: 'http://localhost:8000/alibaba2/public/lop-hoc/dschomolop/'+dk,
+        success: function(data) { 
+            $('#lophocho tbody').html(data);
+            $('#modal-danhsachchomolop').modal('show');
+            
+        },
+        error: function(data) {
+            console.log(data);
+        }
+    });
+ }
+// ajax hiển thị lớp học trong khóa học
+
+function hienthilophoc(dk)
+ {
+ 
+    $.ajax({
+
+        type: 'GET',
+        url: 'http://localhost:8000/alibaba2/public/lop-hoc/hienthilophoc/'+dk,
+        success: function(data) { 
+            $('#hienthilophoc tbody').html(data);
+            $('#modal-hienthilophoc').modal('show');
+            
+        },
+        error: function(data) {
+            console.log(data);
+        }
+    });
+ }
+// khai giảng
+function khaigianglop(lh) {
+
+$.ajax({
+
+    type: 'GET',
+    url: 'http://localhost:8000/alibaba2/public/lop-hoc/getkhaigianglop/' + lh,
+    success: function(data) { 
+       
+        $("#form-khaigianglop input[name=chinhanh]").val(data.chinhanh);
+        $("#form-khaigianglop input[name=chuongtrinh]").val(data.chuongtrinh);
+        $("#form-khaigianglop input[name=khoahoc]").val(data.khoahoc);
+        $("#form-khaigianglop input[name=id]").val(data.lh.id);
+        $('#modal-khaigianglop').modal('show');
+    },
+    error: function(data) {
+        console.log(data);
+    }
+});
+}
+
+$(function () {
+
+
+
+$('.js-btn-khaigianglop').click(function (e) {
+
+    e.preventDefault();
+  
+    let $this = $(this);
+
+let $domForm = $this.closest('#form-khaigianglop');
+     
+    
+    $.ajax({
+        url: 'http://localhost:8000/alibaba2/public/lop-hoc/khaigianglop/' + $("#form-khaigianglop input[name=id]").val(),
+         data: new FormData($("#modal-khaigianglop form")[0]),
+                contentType: false,
+                processData: false,
+ method : "POST",
+    }).done(function (data) {
+        $("#modal-khaigianglop").modal('hide');
+        $("#form-khaigianglop")[0].reset();
+        $('#modal-hienthilophoc').modal('hide');
+       
+        swal({
+      title: "Alibaba!",
+      text: "Khai giảng thành công!",
+      type: "info",
+      allowOutsideClick: true,
+      showConfirmButton:false,
+       showCancelButton: true,
+       confirmButtonText: "OK"
+      
+        
+});
+
+         
+    }).fail(function (data) {
+        var errors = data.responseJSON;
+        $.each(errors.errors, function (i, val) {
+            $domForm.find('input[name=' + i + ']').siblings('.error-form').text(val[0]);
+        });
+    });
+});
+})
+ 
+
+// thêm mới lớp học
+ $(function () {
+
+$(".themlophoc").click(function (event) {
+    event.preventDefault();
+    $("#modal-themlophoc").modal('show');
+})
+let URL = '<?php echo e(route('ajax_post.themlophoc')); ?>'
+$('.js-btn-themlophoc').click(function (e) {
+
+    e.preventDefault();
+  
+    let $this = $(this);
+
+let $domForm = $this.closest('#form-themlophoc');
+     
+    
+    $.ajax({
+        url: URL,
+         data: new FormData($("#modal-themlophoc form")[0]),
+                contentType: false,
+                processData: false,
+ method : "POST",
+    }).done(function (data) {
+        $("#modal-themlophoc").modal('hide');
+        $("#form-themlophoc")[0].reset();
+       
+        swal({
+      title: "Alibaba!",
+      text: "Thêm mới thành công!",
+      type: "info",
+      allowOutsideClick: true,
+      showConfirmButton:false,
+       showCancelButton: true,
+       confirmButtonText: "OK"
+      
+        
+});
+
+         
+    }).fail(function (data) {
+        var errors = data.responseJSON;
+        $.each(errors.errors, function (i, val) {
+            $domForm.find('input[name=' + i + ']').siblings('.error-form').text(val[0]);
+        });
+    });
+});
+})
+
+// ajax sử lý
+$( document ).ready(function() {
+  
+  $('#chinhanh').change(function(event) {
+     var idchinhanh=$(this).val();
+    
+     $.get('ajax/chuongtrinh/'+idchinhanh,function(data){
+        $('#chuongtrinh').html(data);
+     });
+ });
+   var idchuongtrinh=$('#chuongtrinh').val();
+    
+     $.get('ajax/khoahoc/'+idchuongtrinh,function(data){
+        $('#khoahoc').html(data);
+     });
+     
+
+    $('#chuongtrinh').change(function(event) {
+     var idchuongtrinh=$(this).val();
+    
+     $.get('ajax/khoahoc/'+idchuongtrinh,function(data){
+        $('#khoahoc').html(data);
+     });
+ });
+
+});
+
+// tìm kiếm khóa học trong chi nhánh
+$(function () {
+
+      
+let URL = '<?php echo e(route('ajax_post.timkhoahocdangki')); ?>';
+$('#chinhanh_tim').change(function (e) {
+
+    e.preventDefault();
+  
+    let $this = $(this);
+
+let $domForm = $this.closest('#form-timkhoahoc');
+     
+    
+    $.ajax({
+        url: URL,
+         data: new FormData($("#form-timkhoahoc")[0]),
+                contentType: false,
+                processData: false,
+ method : "POST",
+    }).done(function (data) {
+       
+        
+         $('#khoahocdangki').html(data);
+    }).fail(function (data) {
+        var errors = data.responseJSON;
+        $.each(errors.errors, function (i, val) {
+            $domForm.find('input[name=' + i + ']').siblings('.error-form').text(val[0]);
+        });
+    });
+});
+});
+</script>
+ <?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin/index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\alibaba\resources\views/admin/lophoc/chomolop.blade.php ENDPATH**/ ?>

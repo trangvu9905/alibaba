@@ -1,0 +1,139 @@
+
+      <div id="dangkykhoahoc" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+    <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h3 class="modal-title text-center primecolor">Đăng kí khóa học</h3>
+            </div>
+            
+            <div class="modal-body" style="overflow: hidden;">
+             
+              
+                   <form action="" method="POST" id="form-register">
+                        <?php echo csrf_field(); ?>
+                       <input type="hidden" name="hocvien" value="<?php echo e($idhocvien); ?>">
+                        <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="control-label">Chọn Chi Nhánh:</label>
+                    <select name="chinhanh" id="chinhanh"  class="form-control">
+                        <option>Chọn chi nhánh</option>
+                        <?php $__currentLoopData = $chinhanh; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cn): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <option value="<?php echo e($cn->id); ?>"><?php echo e($cn->ten); ?></option>
+                       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                         <span class="error-form"></span>
+                </select>
+                           
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="control-label">Chương trình:</label>
+                    <div id="listchuongtrinh">
+                        <select id="chuongtrinh" class="form-control" name="chuongtrinh">
+                            <option>Chọn chương trình</option>
+                          <?php $__currentLoopData = $chuongtrinh; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ct): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <option value="<?php echo e($ct->id); ?>"><?php echo e($ct->ten); ?></option>
+                       <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </select>
+                    </div>
+                    <div id="listcapdo"></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class=" col-sm-12">
+                <div class="form-group">
+                    <label class="control-label">Khóa học:</label>
+                    <div id="listkhoahoc">
+                        <select id="khoahoc" name="khoahoc" class="form-control" >
+                            <option>Chọn khóa học</option>
+                             <?php $__currentLoopData = $khoahoc; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $kh): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($kh->id); ?>"><?php echo e($kh->ten); ?></option>
+                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                           </select></div>
+                </div>
+            </div>
+            <div class=" col-sm-12">
+                <div class="form-group">
+                    <label class="control-label">Lớp học:</label>
+                    <div id="listlophoc">
+                     <select id="lophoc" name="lophoc" class="form-control"> 
+                        <option value="0">Chờ mở lớp</option>
+                          <?php $__currentLoopData = $lophoc; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lh): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($lh->id); ?>"><?php echo e($lh->ten); ?></option>
+                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </select></div>
+                </div>
+            </div>
+            <div class=" col-sm-12">
+                <div class="form-group">
+                    <label class="control-label">Học Phí </label>
+                    <div  id="hocphi">
+                    <input name="hocphi" type="text" class="form-control" id="hp">
+                    </div>
+                </div>
+            </div>
+            <div class=" col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Chương trình khuyến mãi</label>
+                    <select name="khuyenmai" id="khuyenmai"  class="form-control ">
+                        <option>Chọn chương trình khuyến mãi</option>
+                   <option value="0">Không</option>
+                          <?php $__currentLoopData = $khuyenmai; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $km): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($km->giatri); ?>"><?php echo e($km->makm); ?> (<?php echo e($km->giatri); ?>%)</option>
+                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                  </select>
+                  
+                </div>
+            </div>
+            <div class=" col-sm-6">
+                <div class="form-group">
+                    <label class="control-label">Chiết khấu</label>
+                    <div id="chietkhau">
+                        
+                   
+                    <input name="giam" type="text" id="giam" class="form-control " value="0"  style="background-color: #ffe907">
+                     </div>
+                </div>
+            </div>
+            <div class=" col-sm-12">
+                <div class="form-group">
+                    <label class="control-label">Học Thử </label>
+                    <div class="form-control">
+                        <input type="radio" name="hocthu" value="1" id="hocthu1">
+                        Có 
+                            <input type="radio" name="hocthu" value="0" id="hocthu2" checked="checked">
+                        Không
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="control-label">Học Phí phải thu</label>
+                    <input name="phaithu" type="text" id="phaithu" class="form-control " style="color: red; background-color: #ffe907; font-weight: bold" readonly="true">
+                </div>
+            </div>
+
+
+            <div class="col-sm-12" id="Listkhofollow"></div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                      <button type="submit" class="btn btn-primary js-btn-login">Đăng kí</button>
+
+                </div>
+            </div>
+
+
+                       
+                    </form>
+               
+            </div>
+        </div>
+
+    </div>
+</div>
+  <?php /**PATH C:\xampp\htdocs\alibaba2\resources\views/partials/dangkikh.blade.php ENDPATH**/ ?>

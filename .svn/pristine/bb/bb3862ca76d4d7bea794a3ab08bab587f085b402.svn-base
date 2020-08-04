@@ -1,0 +1,170 @@
+<?php $__env->startSection('content'); ?>
+ <section id="content">
+                    <section class="hbox stretch">
+
+                        <section class="section-layout-2">
+                            
+
+<script src="/module/khoahoc/js/jskhoahoc.js"></script>
+<script src="/module/khoahoc/js/jschuongtrinh.js"></script> 
+<section class="vbox">
+    
+<header class="header bg-light dk">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="menu-option-top1 panel b-a m-b-sm">
+                <div class="row m-n">
+ 
+                    <div id="menutop_danhsach" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=khoahoc!danhsach" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-success-lt hover-rotate"></i>
+                                <i class="fa fa-archive text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-success">Khóa Học</span>
+                                <small class="text-muted">Quản lý</small>
+                            </span>
+                        </a>
+                    </div> 
+                    <div id="menutop_khoahoc_chinhanh" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                        <a href="/Default.aspx?mod=khoahoc!khoahoc_chinhanh" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                                <i class="i i-settings text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-info">Cài Đặt</span>
+                                <small class="text-muted">Chi Nhánh</small>
+                            </span>
+                        </a>
+                    </div> 
+                     <div id="menutop_thongke_dangky" class="item-menu col-md-2 b-r m-t-xs m-b-xs">
+                          <a href="/Default.aspx?mod=khoahoc!thongke_dangky" class="block hover">
+                            <span class="i-s i-s-1-5x pull-left m-r-xs">
+                                <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                                <i class="fa fa-bar-chart-o text-white i-sm"></i>
+                            </span>
+                            <span class="clear">
+                                <span class="h5 block m-t-xs text-info">Thống kê</span>
+                                <small class="text-muted">Đăng ký</small>
+                            </span>
+                        </a>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<span id="ctl10_menutop_script_menutop"> <script>document.getElementById("menutop_danhsach").classList.add('item-active');</script></span>
+    <section class="scrollable wrapper">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+
+                <section class="panel panel-default">
+                    <header class="panel-heading">
+                        <p class="inline m-b-xs m-t-xs font-bold">
+                            
+                            DANH SÁCH KHÓA HỌC
+                        </p>
+                        <div class="pull-right">
+                            
+                            <a href="javascript:Add_chuongtrinh()" class="btn btn-default btn-sm" title="Thêm một chương trình"><i class="i i-plus2"></i> Thêm chương trình</a>
+
+                            <a href="javascript:Add_khoahoc()" class="btn btn-default btn-sm" title="Thêm một khóa học"><i class="i i-plus2"></i> Thêm Khóa Học</a>
+                       
+
+                            &nbsp;<select name="ctl10$chinhanh" id="chinhanh" onchange="Listacount()" class="form-control pull-right" style="width:200px;display:none">
+  <option value="1">Alibaba Trụ sở ch&#237;nh, Tĩnh Gia</option>
+  <option value="97">Alibaba Tam N&#244;ng Ph&#250; Thọ</option>
+  <option value="98">Olympia Phố Nối</option>
+</select>
+                            
+                        </div>
+                        <div class="clearfix"></div>
+                    </header>
+                   
+
+                    <div class="table-responsive">
+
+                        
+                        <table class="table b-t b-light" id="dyntable">
+                            <thead>
+                                <tr>
+                                    
+                                    <th class="th-sortable" data-toggle="class" style="width: 50px">STT
+                                    </th> 
+                                    <th class="th-sortable" data-toggle="class">Tên
+                                    </th>
+                                     <th class="th-sortable" data-toggle="class">Giáo trình
+                                    </th> 
+                                    <th class="th-sortable hidden-md hidden-sm hidden-xs" data-toggle="class">Học Phí
+                                    </th> 
+                                    <th class="hidden-md hidden-sm hidden-xs">Số giờ</th>
+                                     <th class="text-center">Chức năng</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="showlist">
+                               
+                            </tbody>
+                        </table>
+                        
+
+                    </div> 
+                </section>
+            </div>
+        </div>
+    </section> 
+</section>
+
+
+
+
+<script>
+    Load_liskhoahoc();
+</script>
+<script>    var myWindow;
+    function print_preview() {
+        var style = "  <style> a    .stdtable{     border-collapse:collapse; width:100%       }   .stdtable tr td{border: 1px solid #000; padding:10px   }  .stdtable tr th{border: 1px solid #000; } a {   text-decoration:none;color:black;    }    a:visited { text-decoration:none;color:black;    }    a:hover { text-decoration:underline;color:black;    }   .center {text-align:center;}</style>";
+        var title = "<h2>  Khóa học </h2> ";
+        var data = $("#containTB").html();
+        myWindow = window.open('', '', 'width=800,height=600');
+        myWindow.innerWidth = screen.width;
+        myWindow.innerHeight = screen.height;
+        myWindow.screenX = 1;
+        myWindow.screenY = 1;
+        myWindow.document.write(style + title + data);
+        myWindow.focus();
+        myWindow.print();
+    }
+    var tableToExcel = (function () {
+        var uri = 'data:application/vnd.ms-excel;base64,'
+, template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>'
+, base64 = function (s) { return window.btoa(unescape(encodeURIComponent(s))) }
+, format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) }
+        return function () {
+            var table = "dyntable"; var name = "Thống kê học viên";
+            if (!table.nodeType) table = document.getElementById(table)
+            var ctx = { worksheet: name || 'Worksheet', table: table.innerHTML }
+            window.location.href = uri + base64(format(template, ctx))
+        }
+    })();
+</script>
+
+                            <!-- /.vbox -->
+                        </section>
+                        <!-- /.section-layout-2 -->
+
+                    </section>
+                    <!-- /.hbox.stretch -->
+
+                </section>
+                <!-- /#content -->
+
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\alibaba2\resources\views/admin/chuongtrinh.blade.php ENDPATH**/ ?>

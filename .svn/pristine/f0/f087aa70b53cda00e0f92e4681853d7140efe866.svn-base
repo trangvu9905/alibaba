@@ -1,0 +1,195 @@
+@extends('admin.index')
+@section('content')
+<section id="content">
+    <section class="hbox stretch">
+
+        <section class="section-layout-2">
+            
+<section class="vbox">
+
+<section class="scrollable wrapper w-f">
+
+<div class="row">
+<div class="col-lg-12 col-md-12">
+
+<div class="row">
+    <center>
+        <form method="get" onsubmit="return Fast_search()" id="formsearchFast">
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="input-group m-t-md m-b-md">
+                <input class="input-lg form-control" placeholder="Từ khóa"  id="txtsearch" onkeyup="Search_home()"  autocomplete="off" type="text">
+                <span class="input-group-btn">
+
+                    <button class="btn btn-lg btn-warning" type="submit"><i class="fa fa-search"></i>Tìm kiếm</button>
+                </span>
+            </div>
+        </div>
+    </form>
+     
+     <div id="statusloading" style="clear:both;"></div> 
+       <div class=" m-t btn-manager" style="width:80%;max-height:300px;overflow-y:auto;padding:0" id="hocvien_search_home" >
+      </div>
+ </center>
+      
+</div>
+<div class="statistic">
+    <div class="row">
+        <div class="col-lg-4 col-md-6 m-t text-center btn-manager">
+            <a href="" class="block padder-v hover">
+                <span class="i-s i-s-2x">
+                    <i class="i i-hexagon2 i-s-base text-warning hover-rotate"></i>
+                    <i class="fa fa-plus text-white"></i>
+                </span>
+                <span class="clear">
+                    <span class="h3 block m-t-xs text-warning">Thêm mới</span>
+                    <small class="text-muted text-u-c">Thêm học viên mới</small>
+                </span>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 m-t text-center btn-manager">
+            <a href="hoc-vien/dshocvien" class="block padder-v hover">
+                <span class="i-s i-s-2x">
+                    <i class="i i-hexagon2 i-s-base text-success-lt hover-rotate"></i>
+                    <i class="fa fa-list text-white"></i>
+                </span>
+                <span class="clear">
+                    <span class="h3 block m-t-xs text-warning">Danh sách học viên</span>
+                    <small class="text-muted text-u-c">Tất cả học viên mới, tiềm năng, theo dõi</small>
+                </span>
+            </a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 m-t text-center btn-manager">
+            <a href="hoc-vien/dshocvientiemnang" class="block padder-v hover">
+                <span class="i-s i-s-2x">
+                    <i class="i i-hexagon2 i-s-base text-success-dker hover-rotate"></i>
+                    <i class="fa fa-star text-white"></i>
+                </span>
+                <span class="clear">
+                    <span class="h3 block m-t-xs text-warning">Học viên tiềm năng</span>
+                    <small class="text-muted text-u-c">Danh sách học viên tiềm năng có thể học</small>
+                </span>
+            </a>
+        </div>
+
+
+
+        <div class="col-lg-4 col-md-6 m-t text-center btn-manager">
+            <a href="hoc-vien/lich-su-dang-ky" class="block padder-v hover">
+                <span class="i-s i-s-2x">
+                    <i class="i i-hexagon2 i-s-base text-primary hover-rotate"></i>
+                    <i class="i i-history icon text-white"></i>
+                </span>
+                <span class="clear">
+                    <span class="h3 block m-t-xs text-warning">Lịch sử đăng ký</span>
+                    <small class="text-muted text-u-c">Lịch sử tham gia các lớp học</small>
+                </span>
+            </a>
+        </div>
+
+
+        <div class="col-lg-4 col-md-6 m-t text-center btn-manager">
+            <a href="/Default.aspx?mod=hocvien!thongke" class="block padder-v hover">
+                <span class="i-s i-s-2x">
+                    <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                    <i class="fa fa fa-bar-chart-o text-white"></i>
+                </span>
+                <span class="clear">
+                    <span class="h3 block m-t-xs text-warning">Thống kê</span>
+                    <small class="text-muted text-u-c">Thống kê chung cho học viên</small>
+                </span>
+            </a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 m-t text-center btn-manager">
+            <a href="/Default.aspx?mod=hocvien!thongke_dauvao" class="block padder-v hover">
+                <span class="i-s i-s-2x">
+                    <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                    <i class="fa fa fa-bar-chart-o text-white"></i>
+                </span>
+                <span class="clear">
+                    <span class="h3 block m-t-xs text-warning">TK Bài Test</span>
+                    <small class="text-muted text-u-c">Danh sách Test đầu vào</small>
+                </span>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 m-t text-center btn-manager">
+            <a href="/Default.aspx?mod=hocvien!thongke_baoluu" class="block padder-v hover">
+                <span class="i-s i-s-2x">
+                    <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                    <i class="fa fa-save text-white"></i>
+                </span>
+                <span class="clear">
+                    <span class="h3 block m-t-xs text-warning">Bảo Lưu</span>
+                    <small class="text-muted text-u-c">Tình trạng khóa đăng ký</small>
+                </span>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 m-t text-center btn-manager">
+            <a href="/Default.aspx?mod=hocvien!danhsach_nghihoc" class="block padder-v hover">
+                <span class="i-s i-s-2x">
+                    <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                    <i class="fa fa fa-bar-chart-o text-white"></i>
+                </span>
+                <span class="clear">
+                    <span class="h3 block m-t-xs text-warning">Nghỉ học</span>
+                    <small class="text-muted text-u-c">Học viên Vắng</small>
+                </span>
+            </a>
+        </div>
+
+        <div class="col-lg-4 col-md-6 m-t text-center btn-manager">
+            <a href="/Default.aspx?mod=hocvien!Danhsach_14days" class="block padder-v hover">
+                <span class="i-s i-s-2x">
+                    <i class="i i-hexagon2 i-s-base text-info hover-rotate"></i>
+                    <i class="fa fa fa-bar-chart-o text-white"></i>
+                </span>
+                <span class="clear">
+                    <span class="h3 block m-t-xs text-warning">Gần kết khóa</span>
+                    <small class="text-muted text-u-c">học viên còn 14 ngày</small>
+                </span>
+            </a>
+        </div>
+         
+          <div class="col-lg-4 col-md-6 m-t text-center btn-manager>">
+            <a href="/MODULE/HOCVIEN/Print/Birthday.aspx" class="block padder-v hover" target="_blank">
+                <span class="i-s i-s-2x">
+                    <i class="i i-hexagon2 i-s-base text-info hover-rotate"> </i> 
+                    <i id="ctl10_countbirthday" class="text-white">9</i> 
+                </span>
+                <span class="clear">
+                    <span class="h3 block m-t-xs text-warning">Sinh nhật </span>
+                    <small class="text-muted text-u-c">Trong tháng</small>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+</div>
+<!-- /.row -->
+
+</section>
+<!-- /.scrollable .wrapper -->
+
+<footer class="footer bg-white b-t b-light">
+</footer>
+
+<a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen"
+data-target="#nav"></a>
+</section>
+
+            <!-- /.vbox -->
+        </section>
+        <!-- /.section-layout-2 -->
+
+    </section>
+    <!-- /.hbox.stretch -->
+
+</section>
+
+<!-- /#content -->
+@endsection
